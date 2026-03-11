@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> svr - proj </title>
+
+    <style>
+        /* 1. Global Styles */
+        body {
+            margin-left: 5%;
+            margin-right: 50%;
+            font-family: "Times New Roman", Times, serif; /* Classic Prof Dr font */
+        }
+
+        /* 2. Hide Mobile elements by default (Desktop view) */
+        .mobile-only { 
+            display: none; 
+        }
+
+        /* 3. The "Switch" (Media Query) */
+        @media only screen and (max-width: 600px) {
+            /* Hide Desktop-only stuff */
+            .desktop-only { 
+                display: none !important; 
+            }
+
+            /* Show Mobile-only stuff */
+            .mobile-only { 
+                display: block !important;
+                margin-left: 2%;
+                margin-right: 2%; /* Don't use 50% here or text will be too thin */
+            }
+
+            body { 
+                font-size: 18px; 
+                margin-left: 2%; 
+                margin-right: 2%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <br>
+    <header>
+        <td align="left" valign="top"><b><font size="5">Sub Vocal Recognition</font></b><br>
+        <i>Luka Rekhviashvili, Giorgi Rurua</i>
+        <br>
+        
+        
+    </header>
+    <br>    
+    <hr>
+    
+    
+
+    
+    <br><br><br>
+    <footer>
+    <hr>
+    <p style="margin: 0;">last modified: March 07, 2026</p>
+    </footer>
+</body>
+</html>
