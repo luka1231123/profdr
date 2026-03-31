@@ -9,8 +9,8 @@ env = Environment(loader=FileSystemLoader('templates'))
 # Create the public directory if it doesn't exist
 os.makedirs('public', exist_ok=True)
 
-# Define the pages you want to build
-pages = ['main.jinja', 'about.jinja', 'svr.jinja']
+# Get all .jinja files in the templates directory
+pages = [f for f in os.listdir('templates') if f.endswith('.jinja')]
 
 # Get today's date for the footer
 today = datetime.now().strftime("%B %d, %Y")
@@ -18,6 +18,7 @@ today = datetime.now().strftime("%B %d, %Y")
 for page in pages:
     # Load the template (it looks for the .jinja file)
     template = env.get_template(page)
+    print(f"Building {page}...")  # Log which page is being built
     
     # Render it with the dynamic date variable
     html_content = template.render(last_modified=today)

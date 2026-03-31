@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> svr - proj </title>
+    <title>Amtavla: Sub Vocal Recognition</title>
 
     <style>
         /* 1. Global Styles */
         body {
+            /* Flexbox setup for the sticky footer */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body is at least as tall as the screen */
+            
+            margin-top: 0;
             margin-left: 5%;
             margin-right: 50%;
             font-family: "Times New Roman", Times, serif; /* Classic Prof Dr font */
@@ -20,46 +26,91 @@
 
         /* 3. The "Switch" (Media Query) */
         @media only screen and (max-width: 600px) {
-            /* Hide Desktop-only stuff */
-            .desktop-only { 
-                display: none !important; 
-            }
-
-            /* Show Mobile-only stuff */
+            .desktop-only { display: none !important; }
             .mobile-only { 
                 display: block !important;
                 margin-left: 2%;
-                margin-right: 2%; /* Don't use 50% here or text will be too thin */
+                margin-right: 2%; 
             }
-
             body { 
                 font-size: 18px; 
                 margin-left: 2%; 
                 margin-right: 2%;
             }
         }
+
+        /* 4. Ensure header alignment */
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px; /* Replaces the top <br> */
+        }
+        .header-table td {
+            vertical-align: top;
+        }
+
+        .portrait-cell {
+            width: 144px; 
+            min-width: 144px; 
+            max-width: 144px;
+            padding-right: 10px; 
+        }
+
+        hr {
+            width: 100%;
+            display: block;
+        }
+
+        /* 5. Footer styling */
+        footer {
+            margin-top: auto; /* This magically pushes the footer to the bottom */
+            padding-bottom: 20px; /* Gives some breathing room at the bottom of the page */
+        }
     </style>
 
 </head>
 <body>
-    <br>
     <header>
-        <td align="left" valign="top"><b><font size="5">Sub Vocal Recognition</font></b><br>
-        <i>Luka Rekhviashvili, Giorgi Rurua</i>
-        <br>
-        
-        
+        <table class="header-table" border="0" cellpadding="0" cellspacing="15">
+            <tr>
+                
+                <td align="left" valign="top">
+                    <b><font size="5">Amtavla: Sub Vocal Recognition Project</font></b><br>
+                    <i>Luka Rekhviashvili, Giorgi Rurua</i>
+                    <br>
+                    
+                    
+                </td>
+            </tr>
+        </table>
     </header>
     <br>    
     <hr>
     
     
+<p>navigation</p>
+<ul>
+    <li><a href="context.html">Context & Mission</a></li>
+    <li><a href="research_repository.html">Research Repository</a></li>
+    <li><a href="software.html">Methodology (Software)</a></li>
+    <li><a href="hardware.html">Methodology (Hardware)</a></li>
+    <li><a href="progress.html">Current Progress</a></li>
+    <li>Future Roadmap (3-Phase Plan)
+        <ul>
+            <li><a href="phase_1.html">Phase 1: Foundation & Funding</a></b></li>
+            <li><a href="phase_2.html">Phase 2: Data Acquisition</a></b></li>
+            <li><a href="phase_3.html">Phase 3: Integration</a></b></li>
+        </ul>
+    </li>
+</ul>
+
+<br>
 
     
-    <br><br><br>
     <footer>
-    <hr>
-    <p style="margin: 0;">last modified: March 07, 2026</p>
+        <hr>
+        <p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+        <p style="margin: 0;">last modified: March 31, 2026</p>
     </footer>
 </body>
 </html>
