@@ -5,4 +5,33 @@
 {% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
 
 {%block content%}
+<h3>I. Abstract</h3>
+<blockquote>
+    This ongoing research project explores the capturing and decoding of electromyographic (EMG) signals from the vocal cords during silent reading. The objective is to translate sub-vocalized neuro-muscular impulses into actionable digital text without audible speech.
+</blockquote>
+
+<h3>II. Architecture & Signal Flow</h3>
+<p>To adhere to a minimalist engineering approach, the hardware and software pipelines are strictly decoupled. Below is the current system schematic:</p>
+
+<pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; overflow-x: auto;">
+  [Throat Sensors] 
+         |  (Micro-volt impulses)
+         v
+  +-------------+
+  |  Amplifier  | ---> (Analog-to-Digital Conversion)
+  +-------------+
+         |
+         v
+  [Raw EMG Data] ---> [Feature Extraction] ---> [Classification Model]
+</pre>
+
+<h3>III. Current Phase</h3>
+<ul>
+    <li><b>Phase I:</b> Hardware assembly and electrode placement optimization. <i>(Complete)</i></li>
+    <li><b>Phase II:</b> Noise filtering and baseline signal acquisition. <i>(In Progress)</i></li>
+    <li><b>Phase III:</b> Training the classification model. <i>(Pending)</i></li>
+</ul>
+
+<br>
+<p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
 {%endblock%}
