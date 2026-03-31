@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context & Mission</title>
+
+    <style>
+        /* 1. Global Styles */
+        body {
+            /* Flexbox setup for the sticky footer */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body is at least as tall as the screen */
+            
+            margin-top: 0;
+            margin-left: 5%;
+            margin-right: 50%;
+            font-family: "Times New Roman", Times, serif; /* Classic Prof Dr font */
+        }
+
+        /* 2. Hide Mobile elements by default (Desktop view) */
+        .mobile-only { 
+            display: none; 
+        }
+
+        /* 3. The "Switch" (Media Query) */
+        @media only screen and (max-width: 600px) {
+            .desktop-only { display: none !important; }
+            .mobile-only { 
+                display: block !important;
+                margin-left: 2%;
+                margin-right: 2%; 
+            }
+            body { 
+                font-size: 18px; 
+                margin-left: 2%; 
+                margin-right: 2%;
+            }
+        }
+
+        /* 4. Ensure header alignment */
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px; /* Replaces the top <br> */
+        }
+        .header-table td {
+            vertical-align: top;
+        }
+
+        .portrait-cell {
+            width: 144px; 
+            min-width: 144px; 
+            max-width: 144px;
+            padding-right: 10px; 
+        }
+
+        hr {
+            width: 100%;
+            display: block;
+        }
+
+        /* 5. Footer styling */
+        footer {
+            margin-top: auto; /* This magically pushes the footer to the bottom */
+            padding-bottom: 20px; /* Gives some breathing room at the bottom of the page */
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <table class="header-table" border="0" cellpadding="0" cellspacing="15">
+            <tr>
+                
+                <td align="left" valign="top">
+                    <b><font size="5">Context & Mission</font></b><br>
+                    <i>Amtavla: Sub Vocal Recognition Project</i>
+                    <br>
+                    
+                    
+                </td>
+            </tr>
+        </table>
+    </header>
+    <br>    
+    <hr>
+    
+    
+
+<h3>Context</h3>
+<p style="margin-top: 0%;">
+Throughout human history, we have relied on tools to extend our physical capabilities. Computers represent a fundamental evolution of this paradigm: they are our first tools designed to extend cognition. Over the past several decades, technology has moved increasingly closer to us, culminating in mobile devices that act as an extension of ourselves both physically and mentally. Yet, we remain separated from this computing power by an incredibly inefficient interface. Today, Large Language Models place the near-entirety of human knowledge at our fingertips, but those very fingertips have become the limiting factor. The speed of manual input is a severe bottleneck to cognitive output. We believe the necessary next step in human-computer interaction is moving beyond physical input so that computing becomes a seamless part of our thought process.
+<br><br>
+The most viable, non-invasive implementation to bridge this gap is Brain-Computer Interface technology powered by Sub-vocal Recognition. SVR is an emerging technology that combines learning algorithms, neuroscience, and artificial intelligence to fundamentally change how humans communicate with machines. Traditional speech recognition systems depend on microphones to capture audible sound. SVR systems work differently by interpreting the physiological signals generated during speech production, even when no audible sound is produced. When humans speak, or silently rehearse speech in their minds, the brain sends electrical signals to the articulatory muscles, including those controlling the tongue, lips, jaw, and larynx. Specialized sensing technologies can detect these minute signals. By capturing and decoding these patterns, SVR translates the biological markers of speech into usable digital information in complete silence, suggesting that future communication systems will operate directly from physiological signals.
+</p>
+<hr>
+<h3>Mission statement</h3>
+<p style="margin-top: 0%;">
+Our central objective is to connect biological intention with digital action by creating the most accurate Sub-vocal Recognition model ever developed. We are committed to making thoughts into inputs, transforming human intention into direct, frictionless control for computers and intelligent systems. By recording the electrical signals that travel from the brain to the articulatory muscles during speech, our system seeks to reconstruct internal speech and convert it directly into digital text or synthesized voice. Crucially, we are dedicated to identifying the optimal, most plausible, and least disruptive hardware configuration. We envision a solution that integrates so naturally into everyday life that it becomes invisible, ensuring this technology is practically usable by everyday humans rather than confined to a laboratory setting with restrictive sensors.
+<br><br>
+We aim to move beyond simple word recognition to a full-sentence classification strategy that allows for natural, continuous, and fluid conversation. However, our ambition extends beyond accurate translation to propose a completely novel Silent Speech Interface (SSI) system. Within this ecosystem, we introduce proactive human-computer interaction, where the machine functions as a dynamic, continuous extension of cognition rather than a passive tool waiting for explicit, turn-based commands. We believe intelligence augmentation should be as seamless as thinking, requiring absolutely no visible movement or sound. Ultimately, as we engineer this frictionless integration of technology and biological intention, we are deeply committed to considering the broader societal implications of fundamentally reshaping our relationship with technology, privacy, and each other.
+
+
+    
+    <footer>
+        <hr>
+        <p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+        <p style="margin: 0;">last modified: March 31, 2026</p>
+    </footer>
+</body>
+</html>
