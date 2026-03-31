@@ -20,18 +20,12 @@
 
         /* 3. The "Switch" (Media Query) */
         @media only screen and (max-width: 600px) {
-            /* Hide Desktop-only stuff */
-            .desktop-only { 
-                display: none !important; 
-            }
-
-            /* Show Mobile-only stuff */
+            .desktop-only { display: none !important; }
             .mobile-only { 
                 display: block !important;
                 margin-left: 2%;
-                margin-right: 2%; /* Don't use 50% here or text will be too thin */
+                margin-right: 2%; 
             }
-
             body { 
                 font-size: 18px; 
                 margin-left: 2%; 
@@ -44,20 +38,30 @@
 <body>
     <br>
     <header>
-        <td align="left" valign="top"><b><font size="5">{%block head%}Luka Rekhviashvili{% endblock %}</font></b><br>
-        <i>{%block subhead%}Abiturient/Senior Student, pulchritudinous{% endblock %}</i>
-        <br>
-        {%block extra%}
-        {% endblock %}
+        <table border="0" cellpadding="0" cellspacing="15">
+            <tr>
+                <td align="left" valign="top" class="desktop-only">
+                    {% block portrait %}{% endblock %}
+                </td>
+                <td align="left" valign="top">
+                    <b><font size="5">{%block head%}Luka Rekhviashvili{% endblock %}</font></b><br>
+                    <i>{%block subhead%}Abiturient/Senior Student, pulchritudinous{% endblock %}</i>
+                    <br>
+                    {%block extra%}
+                    {% endblock %}
+                </td>
+            </tr>
+        </table>
     </header>
     <br>    
     <hr>
     
     {% block content %}{% endblock %}
     
-    <br><br><br>
+    <br><br><br><br><br><br>
     <footer>
     <hr>
+    <p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
     <p style="margin: 0;">last modified: {{ last_modified }}</p>
     </footer>
 </body>
