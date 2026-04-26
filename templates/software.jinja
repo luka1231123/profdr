@@ -1,10 +1,36 @@
-{% extends "base.jinja" %}
+{% extends "svr_cont.jinja" %}
 
-{% block title %}Methodology (Software){% endblock %}
-{% block head %}Methodology (Software){% endblock %}
-{% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
+{% block title %}Software{% endblock %}
+{% block head %}Software{% endblock %}
 
 {% block content %}
-<h1>Methodology (Software)</h1>
-<p>Details about the software methodology used in the project.</p>
+
+{{ header("Software Architecture")}}
+{{ body_text("The software side of Amtavla serves two primary objectives: decoding raw EMG signals into text, and utilizing that text to drive a persistent cognitive assistant. These systems operate as distinct domains but function as a cohesive whole.")}}
+<hr>
+{{ header("Part A: Signal to Text")}}
+{{ body_text("This is the heavier technical lift. Translating neuromuscular signals into coherent language requires adapting cutting-edge research, and a core focus of this project is rigorously testing which theoretical approaches actually hold up on physical hardware among many different users.
+The emg to text pipeline operates in four stages:
+Latent Alignment: Raw EMG features are mapped to audio speech representations using contrastive learning and dynamic time warping (DTW). Since both modalities stem from the same underlying motor intent, this step effectively transfers established linguistic structures from audio models directly into the EMG domain. (MONA LISA framework)
+Sequence Modeling: The aligned features are fed into a sequence model. We are testing two primary architectures to determine optimal real-world performance: a Conformer, which balances localized motor patterns with broader sentence context, and Mamba, a state-space model built to scale efficiently across long biological time series.
+Initial Decoding: A Connectionist Temporal Classification (CTC) algorithm generates a baseline transcript. This is fast, but structurally imperfect.
+Contextual Correction: The raw CTC output is routed through a localized LLM. Acting as a neuromuscular spellchecker, it evaluates the candidate transcripts and selects the most grammatically and contextually plausible interpretation.
+")}}
+<hr>
+{{ header("Part B: The Assistant")}}
+{{ body_text("The second half of the software stack is the cognitive engine—a companion engineered to extend human memory, structured reasoning, and digital reach.
+At runtime, the core orchestration layer ingests input, resolves intent, retrieves relevant context, constructs execution plans, and generates responses. The memory architecture is biologically inspired and multi-tiered:
+Episodic: Logs short-term conversational traces and past events.
+Semantic: Extracts and stores stable, long-lived facts.
+Insight: Synthesizes higher-level conclusions across multiple sessions over time.
+Memory is dynamic; it strengthens upon recall and gradually decays when ignored. Crucially, the system handles this memory consolidation, decay, and insight generation entirely in the background, ensuring the foreground conversation remains seamless and uninterrupted.
+Broadly, the system functions as a continuous, reliable operational loop. It takes raw text input, routes it through local models to parse intent, executes necessary actions—like memory retrieval or logical reasoning—and generates a coherent output. Under the hood, it relies on deterministic routing, strict JSON-structured planning, and local SQLite databases to ensure this cycle of input, computation, and response remains fast and stable.
+")}}
+<hr>
+{{ header("The Road Ahead")}}
+{{body_text("What we have built is a foundation. The next phase transitions the system from a reactive assistant to an independent operator, moving beyond static API hooks.
+To achieve this, the assistant will be given access to a secure virtual machine, allowing it to reason through complex problems asynchronously. Instead of relying on pre-programmed functions, it will write, test, and execute its own code. It will dynamically generate the software tools it needs on the fly, process the work in the background, and return with a completed solution.
+However, unchecked automation risks cognitive atrophy. To counter this, Amtavla’s interaction framework is explicitly engineered for cognitive enhancement. It must systematically distinguish between mechanical tasks, which it should absorb, and complex reasoning, where it should introduce deliberate friction. Rather than simply doing the thinking for the user, it will act as a secondary processor—scaffolding ideas, highlighting logical contradictions, and actively augmenting working memory.
+The end state is an autonomous, always-on agent driven by silent EMG input. It builds its own tools and navigates workflows independently, designed specifically to expand, rather than replace, human intellectual capacity.
+")}}
 {% endblock %}

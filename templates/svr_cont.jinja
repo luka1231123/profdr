@@ -1,0 +1,20 @@
+{% extends "base.jinja" %}
+
+{% block title %}X{% endblock %}
+{% block head %}X{% endblock %}
+{% block subhead %} <a href="svr.html"> Amtavla: Sub Vocal Recognition Project </a>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% macro header(text) %}
+    <h3> {{ text }} </h3>
+{% endmacro %}
+
+{% macro body_text(text) %}
+  <p style="margin-top: 0%;">
+    {{ text | replace('\n', '<br><br>') | safe }}
+  </p>
+{% endmacro %}

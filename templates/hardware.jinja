@@ -1,10 +1,25 @@
-{% extends "base.jinja" %}
+{% extends "svr_cont.jinja" %}
 
 {% block title %}Methodology (Hardware){% endblock %}
 {% block head %}Methodology (Hardware){% endblock %}
-{% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
 
 {% block content %}
-<h1>Methodology (Hardware)</h1>
-<p>Details about the hardware methodology used in the project.</p>
+{{header ("Hardware Architecture")}}
+{{body_text("The hardware layer of Amtavla serves one objective: minimizing physical and operational friction. For a continuous silent speech interface to be viable, using it cannot be a conscious act. This requires zero physical discomfort, high reliability, 90%+ accuracy, and a form factor that does not draw attention or alienate the wearer.
+Internally, the system's function is to capture and route. It extracts raw EMG data with minimal signal discrepancy, pre-processes the biological signal, and streams it to an external processing node via Bluetooth—ideally a smartphone.
+")}}
+<hr>
+{{header("Part A: Form Factor and Structural Constraints")}}
+{{body_text("The primary mechanical constraint in surface EMG capture is maintaining constant, uniform normal force against the target musculature. Without it, electrode contact becomes inconsistent and signal quality degrades. This single constraint has invalidated many otherwise promising hardware approaches in the literature, and it is the central problem the form factor must solve.
+The architecture is built on a modified neckband. The neckband sits at the back of the neck and along the jaw—areas people are accustomed to contact from collars, headphones, and jewellery—which means it causes no novel sensory intrusion. Unlike over-ear headphones or head-mounted devices, it leaves the ears open and the face unobstructed, allowing the user to remain fully present in conversation and environment. From the outside, it reads as an ordinary accessory rather than a medical or computing device, which matters for sustained daily wear.
+Structurally, the mechanical tension anchored at the rear of the neck generates the normal force required to hold the primary electrode array against the musculature without adhesives or additional fixation.
+Mapping facial musculature without obstructing the face splits the architecture into three elements. An earphone-style module extends from the band to capture the masseter and house the reference electrode, using the ear's natural geometry for anchorage. For the sub-mandibular and anterior cervical muscles below the jaw—which a band cannot reach directly—a bend-memory wire framework routes along the underside of the jawline. This wire conforms to the user's specific physiology, maintaining sensor contact across different facial geometries without applying rigid or uncomfortable pressure.
+")}}
+<hr>
+{{header("Part B: The Capture Engine")}}
+{{body_text("Generating usable data from silent speech requires capturing four distinct muscle groups bilaterally, which means the processor must drive eight independent channels at high resolution on a single low-power chip.
+The core of the capture engine is the ADS1299, a medical-grade analog-to-digital converter built specifically for biopotential measurements including EMG and ECG. It provides 24-bit resolution per channel with an integrated programmable gain amplifier, giving it the sensitivity to distinguish the fine signal differences between muscle activation patterns that correspond to different phonemes. Off-the-shelf development boards for this chip are too large for daily wear, so the integration requires a custom PCB designed around the ADS1299's reference topology, power filtering requirements, and electrode interface. The custom board condenses all processing into the smallest viable footprint.
+The electrode-to-skin interface is where signal quality and comfort most directly conflict. Rigid or gel-based electrodes maintain reliable contact but cause irritation over extended wear and degrade with repeated use. Graphene-coated textile electrodes resolve this. The graphene layer provides sufficient conductivity for the ADS1299's input requirements while the textile substrate conforms to skin under movement, reducing motion artifacts at the source rather than filtering it downstream. The material breathes, washes, and wears like fabric, removing the maintenance and comfort barriers that make medical-grade electrodes impractical for daily use.
+")}}
+
 {% endblock %}
