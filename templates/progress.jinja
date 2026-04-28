@@ -1,10 +1,16 @@
-{% extends "base.jinja" %}
+{% extends "svr_cont.jinja" %}
 
-{% block title %}Current Progress{% endblock %}
-{% block head %}Current Progress{% endblock %}
+{% block title %}Project Development Roadmap{% endblock %}
+{% block head %}Project Development Roadmap{% endblock %}
 {% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
 
 {% block content %}
-<h1>Current Progress</h1>
-<p>Details about the current progress of the project.</p>
+{{header("Phase 1: Foundation and Theoretical Framework (COMPLETE)")}}
+{{body_text("The initial phase focuses on establishing the scientific and technical groundwork for the electromyography (EMG) system, validating core concepts before moving into complex hardware fabrication. Development begins with a comprehensive literature review of existing research and past methodologies to establish a rigorous technical baseline. Concurrently, we will construct a basic, single-channel electrode setup to validate initial signal acquisition capabilities and test baseline sensor viability. Once the preliminary hardware is verified, the focus will shift to mapping out the architecture for the AI system, defining the core logic and operational flow required for signal interpretation. Finally, this phase will conclude with the engineering of a data encoding pipeline, which consists of a software encoder designed to reliably translate raw hardware signals into formatted data streams for software analysis and baseline testing.")}}
+<hr>
+{{header("Phase 2:Core Hardware Development and Data Acquisition")}}
+{{body_text("Following the acquisition of funding, the project transitions into primary system development, focusing on building the optimized multi-channel hardware setup and gathering foundational data. The first critical step involves procuring necessary medical-grade components, such as the ADS1299 chip, and fabricating a custom Printed Circuit Board (PCB) tailored for an 8-channel, high-resolution configuration. Alongside the circuitry, we will design and test non-intrusive electrode configurations utilizing materials like graphene-coated textiles. This ensures a consistent normal force against the masseter and neck muscles while maintaining maximum user comfort. With the hardware integrated, we will implement software algorithms for rapid signal decoding and deploy the preliminary AI system to process the targeted muscular inputs. This allows us to conduct extensive user testing to gather a diverse dataset, which will be strictly utilized to train and refine the machine learning decoder. This phase culminates in the assembly of a fully functional preliminary prototype and the authoring of a comprehensive research paper detailing our methodology and initial findings.")}}
+<hr>
+{{header("Phase 3: System Optimization and End-User Deployment")}}
+{{body_text("The final phase is dedicated to comprehensive system refinement, miniaturization, and creating a standalone ecosystem for the end user. Both hardware and software components will undergo iterative improvements based on the data and user feedback gathered during the previous phase. Hardware development will prioritize miniaturization by designing a compact, ergonomic housing for the processing unit and integrating it seamlessly into the finalized neckband form factor. Once assembled, these refined prototypes will be deployed for prolonged longitudinal testing to evaluate long-term physical comfort, device durability, and sustained signal accuracy over extended periods of use. Simultaneously, software development will transition the decoding system into a dedicated mobile application. This mobile ecosystem will be capable of directly receiving the EMG information from the neckband, processing the data in real-time, and generating immediate, usable output for the user.")}}
 {% endblock %}
