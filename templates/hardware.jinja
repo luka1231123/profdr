@@ -4,6 +4,41 @@
 {% block head %}Methodology (Hardware){% endblock %}
 
 {% block content %}
+<style>
+    .part-b-shell {
+        position: relative;
+    }
+
+    .hardware-aside {
+        position: absolute;
+        left: calc(100% + 40px);
+        top: 0;
+        width: min(46vw, 50px);
+        min-width: 480px;
+        z-index: 2;
+    }
+
+    .hardware-aside img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #000;
+    }
+
+    .hardware-aside p {
+        margin-top: 8px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .hardware-aside {
+            position: static;
+            width: 100%;
+            min-width: 0;
+            max-width: 480px;
+            margin: 18px auto;
+        }
+    }
+</style>
+
 {{header ("Hardware Architecture")}}
 {{body_text("The hardware layer of Amtavla serves one objective: minimizing physical and operational friction. For a continuous silent speech interface to be viable, using it cannot be a conscious act. This requires zero physical discomfort, high reliability, 90%+ accuracy, and a form factor that does not draw attention or alienate the wearer.
 Internally, the system's function is to capture and route. It extracts raw EMG data with minimal signal discrepancy, pre-processes the biological signal, and streams it to an external processing node via Bluetooth—ideally a smartphone.
@@ -15,17 +50,18 @@ The architecture is built on a modified neckband. The neckband sits at the back 
 Structurally, the mechanical tension anchored at the rear of the neck generates the normal force required to hold the primary electrode array against the musculature without adhesives or additional fixation.
 Mapping facial musculature without obstructing the face splits the architecture into three elements. An earphone-style module extends from the band to capture the masseter and house the reference electrode, using the ear's natural geometry for anchorage. For the sub-mandibular and anterior cervical muscles below the jaw—which a band cannot reach directly—a bend-memory wire framework routes along the underside of the jawline. This wire conforms to the user's specific physiology, maintaining sensor contact across different facial geometries without applying rigid or uncomfortable pressure.
 ")}}
-
-<img src="electrodes.png" 
-     alt="electrode placement" 
-     style="width: 100%; max-width: 400px; height: auto;">
-{{body_text("proposed electrode placement. 1-masseter, 2-diagestic, 3-mylohyoid, 4-sternocleidomastoid")}}
 <hr>
-
+<section class="part-b-shell">
 {{header("Part B: The Capture Engine")}}
 {{body_text("Generating usable data from silent speech requires capturing four distinct muscle groups bilaterally, which means the processor must drive eight independent channels at high resolution on a single low-power chip.
 The core of the capture engine is the ADS1299, a medical-grade analog-to-digital converter built specifically for biopotential measurements including EMG and ECG. It provides 24-bit resolution per channel with an integrated programmable gain amplifier, giving it the sensitivity to distinguish the fine signal differences between muscle activation patterns that correspond to different phonemes. Off-the-shelf development boards for this chip are too large for daily wear, so the integration requires a custom PCB designed around the ADS1299's reference topology, power filtering requirements, and electrode interface. The custom board condenses all processing into the smallest viable footprint.
 The electrode-to-skin interface is where signal quality and comfort most directly conflict. Rigid or gel-based electrodes maintain reliable contact but cause irritation over extended wear and degrade with repeated use. Graphene-coated textile electrodes resolve this. The graphene layer provides sufficient conductivity for the ADS1299's input requirements while the textile substrate conforms to skin under movement, reducing motion artifacts at the source rather than filtering it downstream. The material breathes, washes, and wears like fabric, removing the maintenance and comfort barriers that make medical-grade electrodes impractical for daily use.
 ")}}
+
+<aside class="hardware-aside">
+    <img src="electrodes.png" alt="electrode placement">
+    <p>Proposed electrode placement: 1-masseter, 2-digastric, 3-mylohyoid, 4-sternocleidomastoid.</p>
+</aside>
+</section>
 
 {% endblock %}

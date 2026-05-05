@@ -89,6 +89,41 @@
     <hr>
     
     
+<style>
+    .part-b-shell {
+        position: relative;
+    }
+
+    .hardware-aside {
+        position: absolute;
+        left: calc(100% + 40px);
+        top: 0;
+        width: min(46vw, 50px);
+        min-width: 480px;
+        z-index: 2;
+    }
+
+    .hardware-aside img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #000;
+    }
+
+    .hardware-aside p {
+        margin-top: 8px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .hardware-aside {
+            position: static;
+            width: 100%;
+            min-width: 0;
+            max-width: 480px;
+            margin: 18px auto;
+        }
+    }
+</style>
+
 
     <h3> Hardware Architecture </h3>
 
@@ -106,17 +141,8 @@
     The primary mechanical constraint in surface EMG capture is maintaining constant, uniform normal force against the target musculature. Without it, electrode contact becomes inconsistent and signal quality degrades. This single constraint has invalidated many otherwise promising hardware approaches in the literature, and it is the central problem the form factor must solve.<br><br>The architecture is built on a modified neckband. The neckband sits at the back of the neck and along the jaw—areas people are accustomed to contact from collars, headphones, and jewellery—which means it causes no novel sensory intrusion. Unlike over-ear headphones or head-mounted devices, it leaves the ears open and the face unobstructed, allowing the user to remain fully present in conversation and environment. From the outside, it reads as an ordinary accessory rather than a medical or computing device, which matters for sustained daily wear.<br><br>Structurally, the mechanical tension anchored at the rear of the neck generates the normal force required to hold the primary electrode array against the musculature without adhesives or additional fixation.<br><br>Mapping facial musculature without obstructing the face splits the architecture into three elements. An earphone-style module extends from the band to capture the masseter and house the reference electrode, using the ear's natural geometry for anchorage. For the sub-mandibular and anterior cervical muscles below the jaw—which a band cannot reach directly—a bend-memory wire framework routes along the underside of the jawline. This wire conforms to the user's specific physiology, maintaining sensor contact across different facial geometries without applying rigid or uncomfortable pressure.<br><br>
   </p>
 
-
-<img src="electrodes.png" 
-     alt="electrode placement" 
-     style="width: 100%; max-width: 400px; height: auto;">
-
-  <p style="margin-top: 0%;">
-    proposed electrode placement. 1-masseter, 2-diagestic, 3-mylohyoid, 4-sternocleidomastoid
-  </p>
-
 <hr>
-
+<section class="part-b-shell">
 
     <h3> Part B: The Capture Engine </h3>
 
@@ -126,12 +152,21 @@
   </p>
 
 
+<aside class="hardware-aside">
+    <img src="electrodes.png" alt="electrode placement">
+    <p>Proposed electrode placement: 1-masseter, 2-digastric, 3-mylohyoid, 4-sternocleidomastoid.</p>
+</aside>
+</section>
+
 
     
     <footer>
         <hr>
-        <p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
-        <p style="margin: 0;">last modified: April 28, 2026</p>
+        
+<p style="margin: 0;"><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+<p style="margin-top: 6px;"><a href="svr.html">[ &lt;&lt; return to svr index ]</a></p>
+
+        <p style="margin: 0;">last modified: May 05, 2026</p>
     </footer>
 </body>
 </html>

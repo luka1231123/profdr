@@ -18,3 +18,8 @@
     {{ text | replace('\n', '<br><br>') | safe }}
   </p>
 {% endmacro %}
+
+{% block footer_links %}
+<p style="margin: 0;"><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+<p style="margin-top: 6px;"><a href="svr.html">[ &lt;&lt; return to svr index ]</a></p>
+{% endblock %}

@@ -91,7 +91,9 @@
     
     <footer>
         <hr>
+        {% block footer_links %}
         <p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+        {% endblock %}
         <p style="margin: 0;">last modified: {{ last_modified }}</p>
     </footer>
 </body>

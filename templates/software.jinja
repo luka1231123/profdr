@@ -18,182 +18,378 @@ Contextual Correction: The raw CTC output is routed through a localized LLM. Act
 ")}}
 <hr>
 {{ header("Part B: The Assistant")}}
-{{ body_text("The second half of the software stack is the cognitive engine—a companion engineered to extend human memory, structured reasoning, and digital reach.
+
+<div class="part-b-shell">
+    <div class="part-b-copy">
+{{ body_text("The second half of the software stack is the cognitive engine-a companion engineered to extend human memory, structured reasoning, and digital reach.
 At runtime, the core orchestration layer ingests input, resolves intent, retrieves relevant context, constructs execution plans, and generates responses. The memory architecture is biologically inspired and multi-tiered:
 Episodic: Logs short-term conversational traces and past events.
 Semantic: Extracts and stores stable, long-lived facts.
 Insight: Synthesizes higher-level conclusions across multiple sessions over time.
 Memory is dynamic; it strengthens upon recall and gradually decays when ignored. Crucially, the system handles this memory consolidation, decay, and insight generation entirely in the background, ensuring the foreground conversation remains seamless and uninterrupted.
-Broadly, the system functions as a continuous, reliable operational loop. It takes raw text input, routes it through local models to parse intent, executes necessary actions—like memory retrieval or logical reasoning—and generates a coherent output. Under the hood, it relies on deterministic routing, strict JSON-structured planning, and local SQLite databases to ensure this cycle of input, computation, and response remains fast and stable.
+Broadly, the system functions as a continuous, reliable operational loop. It takes raw text input, routes it through local models to parse intent, executes necessary actions-like memory retrieval or logical reasoning-and generates a coherent output. Under the hood, it relies on deterministic routing, strict JSON-structured planning, and local SQLite databases to ensure this cycle of input, computation, and response remains fast and stable.
 ")}}
+    </div>
+
+    <aside class="part-b-graph-panel" aria-label="Software architecture mindmap">
+        <div class="part-b-graph-sticky">
+
+            <div class="mindmap-container">
+                    <ul class="tree">
+                        <li class="has-children tier-1">
+                            <div class="node-content">
+                                <div class="node-box">The Cognitive Engine (Software Architecture)</div>
+                                <button class="toggle-btn">▼</button>
+                            </div>
+                            <ul>
+                                <li class="has-children tier-2 collapsed">
+                                    <div class="node-content">
+                                        <div class="node-box">Runtime Pipeline</div>
+                                        <button class="toggle-btn">▼</button>
+                                    </div>
+                                    <ul>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Input Ingestion</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Hardware/SVR input integration</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Intent Resolution</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Local model cognitive routing</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Execution Planning</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Strict JSON-structured task graphs</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Context Retrieval</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Pre-generation data fetching</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Response Generation</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Seamless user output delivery</div></div></li></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-children tier-2 collapsed">
+                                    <div class="node-content">
+                                        <div class="node-box">Memory System</div>
+                                        <button class="toggle-btn">▼</button>
+                                    </div>
+                                    <ul>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Episodic Tier</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Short-term conversational trace logging</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Semantic Tier</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Stable, long-lived fact extraction</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Insight Tier</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Cross-session logical synthesis</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Vector Retrieval</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">KNN & local spatial embeddings</div></div></li></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-children tier-2 collapsed">
+                                    <div class="node-content">
+                                        <div class="node-box">Background Logic</div>
+                                        <button class="toggle-btn">▼</button>
+                                    </div>
+                                    <ul>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Asynchronous Processing</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Non-blocking background execution</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Memory Consolidation</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Episodic-to-Semantic promotion rules</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Automated Pruning</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Strength-based memory decay algorithms</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Insight Synthesis</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Batch-processed long-term deductions</div></div></li></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-children tier-2 collapsed">
+                                    <div class="node-content">
+                                        <div class="node-box">Infrastructure</div>
+                                        <button class="toggle-btn">▼</button>
+                                    </div>
+                                    <ul>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">LLM Backend</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Zero-latency inferencing (llama.cpp/Ollama)</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Database Layer</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">Local SQLite & sqlite-vec indices</div></div></li></ul>
+                                        </li>
+                                        <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Data Sovereignty</div><button class="toggle-btn">▼</button></div>
+                                            <ul><li class="tier-4"><div class="node-content"><div class="node-box">100% on-device processing / Air-gapped capable</div></div></li></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </aside>
+</div>
+
+<div class="mobile-map-anchor"></div>
+
 <style>
-    /* Responsive Wrapper to contain the chart within the text column */
+    :root {
+        --map-bg: #e6edf3;
+        --node-bg: #d6e2ec;
+        --node-border: #7e93a6;
+        --node-text: #1f2a35;
+        --line: #93a7b8;
+        --control-bg: #f8fafc;
+        --control-hover: #e9f0f6;
+        --accent: #b46a3a;
+    }
+    .part-b-shell {
+        position: relative;
+    }
+
+    .part-b-copy {
+        position: relative;
+        z-index: 1;
+    }
+
+    .part-b-graph-panel {
+        position: absolute;
+        left: calc(100% + 40px);
+        top: 0;
+        width: min(46vw, 760px);
+        min-width: 480px;
+        z-index: 2;
+    }
+
+    .part-b-graph-sticky {
+        position: sticky;
+        top: 90px;
+        max-height: calc(100vh - 120px);
+        overflow: auto;
+        padding-right: 6px;
+    }
+
     .mindmap-wrapper {
         width: 100%;
-        overflow-x: auto;
-        padding: 20px 0;
-        margin-top: 15px;
-        /* Smooth scrolling for mobile */
-        -webkit-overflow-scrolling: touch; 
+        background-color: var(--map-bg);
+        border: 1px solid #d0dbe5;
+        border-radius: 10px;
+        padding: 14px 12px;
+    }
+
+    .mindmap-controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+    }
+
+    .mindmap-control-btn {
+        border: 1px solid var(--node-border);
+        background-color: var(--control-bg);
+        color: var(--node-text);
+        border-radius: 999px;
+        padding: 4px 11px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 220ms cubic-bezier(0.22, 0.61, 0.36, 1), color 220ms cubic-bezier(0.22, 0.61, 0.36, 1), border-color 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .mindmap-control-btn:hover {
+        background-color: var(--control-hover);
+        border-color: var(--accent);
+        color: #2a1f17;
     }
 
     .mindmap-container {
-        display: inline-block;
-        min-width: max-content; /* Prevents squishing on mobile */
-        padding-right: 20px;
+        width: 100%;
+        padding-bottom: 8px;
+        font-family: "Times New Roman", Times, serif;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* Tree List Reset */
     .mindmap-container ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
-    /* Core Flex Layout */
     .mindmap-container .tree {
         display: flex;
-        flex-direction: row;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .mindmap-container .tree ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 40px; /* Space for horizontal connecting lines */
+        gap: 14px;
+        padding-left: 0;
+        margin-top: 14px;
         position: relative;
-        
-        /* Animation properties */
-        max-width: 1000px;
-        max-height: 1500px;
+        max-width: 1200px;
+        max-height: 2200px;
         opacity: 1;
-        transform: scale(1) translateX(0);
+        transform: translateX(0) scale(1);
         transform-origin: left center;
-        transition: opacity 0.4s ease, transform 0.4s ease, max-width 0.4s ease, max-height 0.4s ease;
+        transition: max-width 320ms cubic-bezier(0.22, 0.61, 0.36, 1), max-height 320ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 240ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
         overflow: hidden;
+        will-change: transform, opacity;
     }
 
     .mindmap-container .tree li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 8px 0; /* Vertical spacing */
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2px 0;
+        min-height: 34px;
     }
 
-    /* Prevent lines from applying to the root absolute node */
-    .mindmap-container .tree > li::before,
-    .mindmap-container .tree > li::after {
-        display: none;
+    .mindmap-container .tree ul > li {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 220ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
     }
 
-    /* The Box and Content Styling */
+    .mindmap-container .tree > li > ul {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 22px;
+        border-top: 1px solid var(--line);
+        padding-top: 15px;
+        margin-top: 16px;
+    }
+
+    .mindmap-container .tree > li > ul > li {
+        width: 24%;
+        min-width: 145px;
+    }
+
+    .mindmap-container .tree > li > ul > li > ul {
+        margin-top: 12px;
+        gap: 10px;
+    }
+
     .mindmap-container .node-content {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 6px;
         position: relative;
         z-index: 2;
     }
 
     .mindmap-container .node-box {
-        background-color: #37474F;
-        color: #ffffff;
-        border-radius: 6px;
-        font-weight: 500;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-        white-space: nowrap;
-        letter-spacing: 0.3px;
-        border: 1px solid #4a5c66;
-        transition: background-color 0.2s;
+        background-color: var(--node-bg);
+        border-radius: 4px;
+        border: 1px solid var(--node-border);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        color: var(--node-text);
+        line-height: 1.25;
+        transition: box-shadow 240ms cubic-bezier(0.22, 0.61, 0.36, 1), border-color 240ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+        text-align: center;
     }
 
-    /* Tier Specific Sizing */
-    .mindmap-container .tier-1 .node-box { font-size: 15px; padding: 10px 18px; background-color: #263238; font-weight: bold; }
-    .mindmap-container .tier-2 .node-box { font-size: 14px; padding: 9px 16px; background-color: #37474F; }
-    .mindmap-container .tier-3 .node-box { font-size: 13px; padding: 8px 14px; background-color: #455A64; }
-    .mindmap-container .tier-4 .node-box { font-size: 12px; padding: 6px 12px; background-color: #546E7A; font-style: italic; color: #eceff1;}
+    .mindmap-container .node-content:hover .node-box {
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(19, 30, 38, 0.14);
+        transform: translateY(-1px);
+    }
+
+    .mindmap-container .tier-1 .node-box { font-size: 14px; padding: 8px 12px; font-weight: 700; }
+    .mindmap-container .tier-2 .node-box { font-size: 13px; padding: 7px 11px; font-weight: 600; }
+    .mindmap-container .tier-3 .node-box { font-size: 12px; padding: 6px 10px; }
+    .mindmap-container .tier-4 .node-box { font-size: 12px; padding: 5px 9px; color: #3d3d3d; }
 
     .mindmap-container .toggle-btn {
-        background-color: #37474F;
-        color: white;
-        border: 1px solid #99B2CA;
         width: 22px;
         height: 22px;
+        min-width: 22px;
         border-radius: 50%;
-        display: flex;
+        border: 1px solid var(--node-border);
+        background-color: var(--control-bg);
+        color: var(--node-text);
+        display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px;
         cursor: pointer;
-        margin-left: 8px;
-        user-select: none;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        font-weight: bold;
+        font-size: 11px;
+        font-weight: 600;
         line-height: 1;
         padding: 0;
+        transition: transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1), background-color 220ms cubic-bezier(0.22, 0.61, 0.36, 1), border-color 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
     }
 
     .mindmap-container .toggle-btn:hover {
-        background-color: #546E7A;
-        transform: scale(1.1);
+        background-color: var(--control-hover);
+        border-color: var(--accent);
     }
 
-    /* Horizontal Connector from Parent to Gap */
+    .mindmap-container .has-children > .node-content {
+        cursor: pointer;
+    }
+
     .mindmap-container .has-children > .node-content::after {
-        content: '';
+        content: "";
         position: absolute;
-        right: -20px; /* Half of the ul left-padding */
-        top: 50%;
-        width: 20px;
-        border-top: 2px solid #99B2CA;
-        z-index: 1;
-        transition: opacity 0.3s;
+        left: 50%;
+        top: calc(100% + 1px);
+        height: 13px;
+        border-left: 1px solid var(--line);
     }
 
-    /* Lines connecting children */
-    .mindmap-container .tree li li::before, 
+    .mindmap-container .tree li li::before,
     .mindmap-container .tree li li::after {
-        content: '';
+        content: "";
         position: absolute;
-        left: -20px;
-        border-color: #99B2CA;
+        border-color: var(--line);
         border-style: solid;
-        z-index: 1;
     }
 
-    /* Middle Children: Straight vertical stem + horizontal branch */
-    .mindmap-container .tree li li::before { border-width: 0 0 0 2px; top: 0; bottom: 0; }
-    .mindmap-container .tree li li::after { border-width: 2px 0 0 0; top: 50%; width: 20px; }
-
-    /* First Child: Top rounded corner */
-    .mindmap-container .tree li li:first-child::before {
-        border-width: 2px 0 0 2px;
-        border-top-left-radius: 8px;
-        top: 50%; bottom: 0; width: 20px;
+    .mindmap-container .tree li li::before {
+        border-width: 1px 0 0 0;
+        top: -15px;
+        left: 50%;
+        width: 0;
+        transform: translateX(-50%);
+        display: none;
     }
-    .mindmap-container .tree li li:first-child::after { display: none; }
 
-    /* Last Child: Bottom rounded corner */
-    .mindmap-container .tree li li:last-child::before {
-        border-width: 0 0 2px 2px;
-        border-bottom-left-radius: 8px;
-        top: 0; bottom: 50%; width: 20px;
+    .mindmap-container .tree li li::after {
+        border-width: 0 0 0 1px;
+        top: -15px;
+        bottom: calc(100% - 2px);
+        left: 50%;
+        transform: translateX(-50%);
     }
-    .mindmap-container .tree li li:last-child::after { display: none; }
 
-    /* Only Child: Single horizontal line */
-    .mindmap-container .tree li li:only-child::before { display: none; }
-    .mindmap-container .tree li li:only-child::after { display: block; border-width: 2px 0 0 0; top: 50%; width: 20px; }
+    .mindmap-container .tree > li > ul > li::before {
+        display: block;
+        width: calc(100% + 38px);
+    }
 
-    /* --- COLLAPSED STATES & ANIMATIONS --- */
     .mindmap-container .collapsed > ul {
         max-width: 0;
         max-height: 0;
         opacity: 0;
-        transform: scale(0.95) translateX(-20px);
+        transform: translateX(-8px) scale(0.985);
         pointer-events: none;
+    }
+
+    .mindmap-container .collapsed > ul > li {
+        opacity: 0;
+        transform: translateY(-4px);
     }
 
     .mindmap-container .collapsed > .node-content::after {
@@ -203,127 +399,192 @@ Broadly, the system functions as a continuous, reliable operational loop. It tak
     .mindmap-container .collapsed > .node-content .toggle-btn {
         transform: rotate(-90deg);
     }
+
+    @media only screen and (max-width: 900px) {
+        .part-b-graph-panel {
+            position: static;
+            width: 100%;
+            min-width: 0;
+            margin-top: 14px;
+        }
+
+        .part-b-graph-sticky {
+            position: static;
+            max-height: none;
+            overflow: visible;
+            padding-right: 0;
+        }
+
+        .mindmap-wrapper {
+            overflow: visible;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mindmap-container {
+            min-width: 0;
+            width: 100%;
+        }
+
+        .mindmap-container .tree ul {
+            padding-left: 0;
+            gap: 8px;
+        }
+
+        .mindmap-container .tree > li > ul {
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .mindmap-container .tree > li > ul > li {
+            width: calc((100% - 24px) / 4);
+            min-width: 0;
+        }
+
+        .mindmap-container .node-box {
+            white-space: normal;
+            word-break: break-word;
+        }
+
+        .mindmap-container .tier-1 .node-box { font-size: 12px; padding: 7px 8px; }
+        .mindmap-container .tier-2 .node-box { font-size: 11px; padding: 6px 7px; }
+        .mindmap-container .tier-3 .node-box { font-size: 10px; padding: 5px 6px; }
+        .mindmap-container .tier-4 .node-box { font-size: 10px; padding: 4px 6px; }
+
+        .mindmap-container .toggle-btn {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            font-size: 10px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .mindmap-container .tree ul,
+        .mindmap-container .toggle-btn,
+        .mindmap-container .node-box,
+        .mindmap-control-btn {
+            transition: none;
+        }
+    }
 </style>
-
-<div class="mindmap-wrapper">
-    <div class="mindmap-container">
-        <ul class="tree">
-            <li class="has-children tier-1 collapsed">
-                <div class="node-content">
-                    <div class="node-box">The Cognitive Engine (Software Architecture)</div>
-                    <button class="toggle-btn">▼</button>
-                </div>
-                <ul>
-                    
-                    <li class="has-children tier-2 collapsed">
-                        <div class="node-content">
-                            <div class="node-box">1. Orchestration & Runtime Pipeline</div>
-                            <button class="toggle-btn">▼</button>
-                        </div>
-                        <ul>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Input Ingestion</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Hardware/SVR input integration</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Intent Resolution</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Local model cognitive routing</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Execution Planning</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Strict JSON-structured task graphs</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Context Retrieval</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Pre-generation data fetching</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Response Generation</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Seamless user output delivery</div></div></li></ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="has-children tier-2 collapsed">
-                        <div class="node-content">
-                            <div class="node-box">2. Bio-Inspired Memory Architecture</div>
-                            <button class="toggle-btn">▼</button>
-                        </div>
-                        <ul>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Episodic Tier</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Short-term conversational trace logging</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Semantic Tier</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Stable, long-lived fact extraction</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Insight Tier</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Cross-session logical synthesis</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Vector Retrieval</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">KNN & local spatial embeddings</div></div></li></ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="has-children tier-2 collapsed">
-                        <div class="node-content">
-                            <div class="node-box">3. Background Cognition Mechanics</div>
-                            <button class="toggle-btn">▼</button>
-                        </div>
-                        <ul>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Asynchronous Processing</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Non-blocking background execution</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Memory Consolidation</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Episodic-to-Semantic promotion rules</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Automated Pruning</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Strength-based memory decay algorithms</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Insight Synthesis</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Batch-processed long-term deductions</div></div></li></ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="has-children tier-2 collapsed">
-                        <div class="node-content">
-                            <div class="node-box">4. Local-First Infrastructure</div>
-                            <button class="toggle-btn">▼</button>
-                        </div>
-                        <ul>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">LLM Backend</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Zero-latency inferencing (llama.cpp/Ollama)</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Database Layer</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">Local SQLite & sqlite-vec indices</div></div></li></ul>
-                            </li>
-                            <li class="has-children tier-3 collapsed"><div class="node-content"><div class="node-box">Data Sovereignty</div><button class="toggle-btn">▼</button></div>
-                                <ul><li class="tier-4"><div class="node-content"><div class="node-box">100% on-device processing / Air-gapped capable</div></div></li></ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const shell = document.querySelector('.part-b-shell');
+        const panel = document.querySelector('.part-b-graph-panel');
+        const mobileAnchor = document.querySelector('.mobile-map-anchor');
+        if (!shell || !panel || !mobileAnchor) {
+            return;
+        }
+
+        const mobileQuery = window.matchMedia('(max-width: 900px)');
+
+        const mountPanel = function(isMobile) {
+            if (isMobile) {
+                if (!mobileAnchor.contains(panel)) {
+                    mobileAnchor.appendChild(panel);
+                }
+            } else {
+                if (!shell.contains(panel)) {
+                    shell.appendChild(panel);
+                }
+            }
+        };
+
+        mountPanel(mobileQuery.matches);
+        mobileQuery.addEventListener('change', function(event) {
+            mountPanel(event.matches);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const treeRoot = document.querySelector('.mindmap-container .tree');
+        if (!treeRoot) {
+            return;
+        }
+
+        const applyStagger = function(branch) {
+            const items = branch.querySelectorAll(':scope > ul > li');
+            items.forEach((item, index) => {
+                item.style.transitionDelay = (index * 28) + 'ms';
+            });
+        };
+
+        const clearStagger = function(branch) {
+            const items = branch.querySelectorAll(':scope > ul > li');
+            items.forEach(item => {
+                item.style.transitionDelay = '0ms';
+            });
+        };
+
+        const toggleBranch = function(branch) {
+            if (!branch) {
+                return;
+            }
+
+            if (branch.classList.contains('collapsed')) {
+                applyStagger(branch);
+                branch.classList.remove('collapsed');
+                window.setTimeout(function() {
+                    clearStagger(branch);
+                }, 380);
+                return;
+            }
+
+            branch.classList.add('collapsed');
+        };
+
         const toggleButtons = document.querySelectorAll('.mindmap-container .toggle-btn');
-        
         toggleButtons.forEach(btn => {
             btn.addEventListener('click', function(e) {
+                e.stopPropagation();
                 const parentLi = this.closest('.has-children');
-                if(parentLi) {
-                    parentLi.classList.toggle('collapsed');
-                }
+                toggleBranch(parentLi);
+            });
+        });
+
+        const branchRows = document.querySelectorAll('.mindmap-container .has-children > .node-content');
+        branchRows.forEach(row => {
+            row.addEventListener('click', function() {
+                const parentLi = this.closest('.has-children');
+                toggleBranch(parentLi);
+            });
+        });
+
+        const controlButtons = document.querySelectorAll('.mindmap-control-btn');
+        controlButtons.forEach(control => {
+            control.addEventListener('click', function() {
+                const action = this.getAttribute('data-action');
+                const branches = treeRoot.querySelectorAll('.has-children');
+                branches.forEach((branch, idx) => {
+                    if (idx === 0) {
+                        branch.classList.remove('collapsed');
+                        return;
+                    }
+
+                    if (action === 'expand-all') {
+                        branch.classList.remove('collapsed');
+                    }
+
+                    if (action === 'collapse-all') {
+                        branch.classList.add('collapsed');
+                    }
+                });
             });
         });
     });
 </script>
+
 <hr>
 {{ header("The Road Ahead")}}
 {{body_text("What we have built is a foundation. The next phase transitions the system from a reactive assistant to an independent operator, moving beyond static API hooks.
 To achieve this, the assistant will be given access to a secure virtual machine, allowing it to reason through complex problems asynchronously. Instead of relying on pre-programmed functions, it will write, test, and execute its own code. It will dynamically generate the software tools it needs on the fly, process the work in the background, and return with a completed solution.
-However, unchecked automation risks cognitive atrophy. To counter this, Amtavla’s interaction framework is explicitly engineered for cognitive enhancement. It must systematically distinguish between mechanical tasks, which it should absorb, and complex reasoning, where it should introduce deliberate friction. Rather than simply doing the thinking for the user, it will act as a secondary processor—scaffolding ideas, highlighting logical contradictions, and actively augmenting working memory.
+However, unchecked automation risks cognitive atrophy. To counter this, Amtavla's interaction framework is explicitly engineered for cognitive enhancement. It must systematically distinguish between mechanical tasks, which it should absorb, and complex reasoning, where it should introduce deliberate friction. Rather than simply doing the thinking for the user, it will act as a secondary processor-scaffolding ideas, highlighting logical contradictions, and actively augmenting working memory.
 The end state is an autonomous, always-on agent driven by silent EMG input. It builds its own tools and navigates workflows independently, designed specifically to expand, rather than replace, human intellectual capacity.
 ")}}
 {% endblock %}

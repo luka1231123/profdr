@@ -1,0 +1,66 @@
+{% extends "svr_cont.jinja" %}
+
+{% block title %}Grant Packet{% endblock %}
+{% block head %}Grant Packet{% endblock %}
+{% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
+
+{% block content %}
+{{ header("Funding Request Focus: Phase 2") }}
+{{ body_text("This grant request is focused on Phase 2, where conceptual and single-channel groundwork is transformed into a multi-channel wearable system ready for structured user validation. Funding enables custom electronics fabrication, signal-grade materials procurement, participant testing logistics, and concentrated model benchmarking. The immediate objective is to produce a reliable eight-channel prototype and a rigorously documented dataset that supports reproducible decoding performance analysis.") }}
+<hr>
+
+{{ header("Use of Funds (Phase 2)") }}
+<table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <th align="left">Category</th>
+        <th align="left">Purpose</th>
+        <th align="left">Allocation</th>
+    </tr>
+    <tr>
+        <td>Electronics and fabrication</td>
+        <td>ADS1299 integration, custom PCB fabrication, passive components, prototyping revisions</td>
+        <td>40%</td>
+    </tr>
+    <tr>
+        <td>Wearable materials</td>
+        <td>Graphene-coated textile electrodes, structural neckband materials, housing iterations</td>
+        <td>20%</td>
+    </tr>
+    <tr>
+        <td>Data collection operations</td>
+        <td>Participant logistics, repeat-session testing, standardized prompt protocol execution</td>
+        <td>20%</td>
+    </tr>
+    <tr>
+        <td>Compute and model development</td>
+        <td>Training infrastructure, experiment tracking, baseline model evaluation pipelines</td>
+        <td>15%</td>
+    </tr>
+    <tr>
+        <td>Contingency and reliability buffer</td>
+        <td>Component lead-time volatility, failed board revisions, replacement equipment</td>
+        <td>5%</td>
+    </tr>
+</table>
+{{ body_text("Final line-item amounts will be attached in the formal budget sheet according to the grant template. The percentage structure above reflects execution priority and procurement risk.") }}
+<hr>
+
+{{ header("Ethics, Privacy, and Safety") }}
+{{ body_text("Amtavla treats biosignal data as sensitive human data. Participation is voluntary, consent-driven, and revocable at any time. All collected sessions are assigned randomized participant identifiers, and personally identifying metadata is stored separately from signal files. Access to raw recordings is restricted to authorized project members and controlled through local encrypted storage practices where available.
+The system is designed as non-invasive and low-risk: dry-contact wearable electrodes with no penetration, low-voltage electronics, and continuous monitoring for skin irritation or discomfort during test sessions. Participants can pause or terminate sessions immediately without penalty.
+Data governance emphasizes minimal retention and purpose limitation. Only data required for model training, validation, and methodological reporting is retained. Any publication output is aggregated and de-identified, with no release of private personal records.") }}
+<hr>
+
+{{ header("Demo and Validation Artifacts") }}
+{{ body_text("The grant period produces concrete artifacts for reviewers and technical auditors:
+1) Multi-channel wearable prototype (hardware v1)
+2) End-to-end capture-to-decoding software pipeline
+3) Dataset protocol and anonymized benchmark splits
+4) Quantitative report including baseline word error rate, latency, and session stability metrics
+5) Demonstration package with images, architecture diagram, and short end-to-end test video
+These outputs are structured to support independent review, replication, and phase-gate decisions for post-grant deployment work.") }}
+<hr>
+
+{{ header("Expected Phase 2 Outcomes") }}
+{{ body_text("By the end of Phase 2, Amtavla will have a tested eight-channel silent speech capture platform, a validated experimental protocol across multiple users, and a technical baseline that de-risks miniaturization and mobile deployment in Phase 3. This closes the gap between concept-stage R&D and practical, repeatable system performance.") }}
+{% endblock %}
