@@ -14,8 +14,8 @@ def build():
     # Set up Jinja2 to look in the /templates folder
     env = Environment(loader=FileSystemLoader('templates'))
 
-    # Create the public directory if it doesn't exist
-    os.makedirs('public', exist_ok=True)
+    # Create the docs directory if it doesn't exist
+    os.makedirs('docs', exist_ok=True)
 
     # Safely get all .jinja files (handles case where dir might not exist yet)
     try:
@@ -38,11 +38,11 @@ def build():
         base_name = os.path.splitext(page)[0]
         output_filename = f"{base_name}.html"
         
-        # Save the output to the /public folder
-        with open(os.path.join('public', output_filename), 'w') as f:
+        # Save the output to the /docs folder
+        with open(os.path.join('docs', output_filename), 'w') as f:
             f.write(html_content)
 
-    print("Build complete! .jinja templates converted to .html in /public.")
+    print("Build complete! .jinja templates converted to .html in /docs.")
 
 class TemplateChangeHandler(FileSystemEventHandler):
     """Listens for changes in the templates directory and triggers a rebuild."""
