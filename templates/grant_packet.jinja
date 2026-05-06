@@ -18,35 +18,63 @@
 {{ body_text("This grant request is focused on Phase 2, where conceptual and single-channel groundwork is transformed into a multi-channel wearable system ready for structured user validation. Funding enables custom electronics fabrication, signal-grade materials procurement, participant testing logistics, and concentrated model benchmarking. The immediate objective is to produce a reliable eight-channel prototype and a rigorously documented dataset that supports reproducible decoding performance analysis.") }}
 <hr>
 
-{{ header("Use of Funds (Phase 2)") }}
+{{ header("Financial Justification and Budget Breakdown") }}
+{{ body_text("As an independent, student-led project, the software architecture, high-VRAM computing infrastructure, and workspace are already secured and self-funded. The requested micro-grant will strictly cover the lean material costs required to build the signal-acquisition hardware. This includes the analog front-end integrated circuits, custom printed circuit board (PCB) fabrication, and the electrodes necessary to capture real-world SVR data.") }}
 <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
     <tr>
         <th align="left">Category</th>
-        <th align="left">Purpose</th>
-        <th align="left">Allocation</th>
+        <th align="left">Specific Item / Resource</th>
+        <th align="left">Estimated Cost (USD)</th>
+        <th align="left">Justification</th>
     </tr>
     <tr>
-        <td>Electronics and fabrication</td>
-        <td>ADS1299 integration, custom PCB fabrication, passive components, prototyping revisions</td>
-        <td>35%</td>
+        <td>Integrated Circuits</td>
+        <td>Biopotential AFE (ADS1299)</td>
+        <td>$55</td>
+        <td>Core analog front-end for high-precision, low-noise measurement of sub-vocal biopotentials.</td>
     </tr>
     <tr>
-        <td>Wearable materials</td>
-        <td>Graphene-coated textile electrodes, structural neckband materials, housing iterations</td>
-        <td>30%</td>
+        <td>Microcontroller</td>
+        <td>Wireless MCU (ESP32 / nRF52)</td>
+        <td>$25</td>
+        <td>Low-latency data transmission from the sensor board to the local compute workstation.</td>
     </tr>
     <tr>
-        <td>Data collection operations</td>
-        <td>Participant logistics, repeat-session testing, standardized prompt protocol execution</td>
-        <td>20%</td>
+        <td>Fabrication</td>
+        <td>Custom PCBs & Assembly</td>
+        <td>$60</td>
+        <td>Fabrication and shipping for low-volume, custom flexible or rigid-flex circuit boards.</td>
     </tr>
     <tr>
-        <td>Compute and model development</td>
-        <td>Training infrastructure, experiment tracking, baseline model evaluation pipelines</td>
-        <td>15%</td>
+        <td>Sensors</td>
+        <td>Surface Electrodes & Paste</td>
+        <td>$45</td>
+        <td>Ag/AgCl electrodes and skin-prep materials for reliable, low-impedance signal acquisition.</td>
+    </tr>
+    <tr>
+        <td>Hardware</td>
+        <td>Passives, Cabling & Connectors</td>
+        <td>$50</td>
+        <td>Resistors, capacitors for hardware filtering, and shielded cables to minimize environmental noise.</td>
+    </tr>
+    <tr>
+        <td>Prototyping</td>
+        <td>3D Printing Filament / Casing</td>
+        <td>$30</td>
+        <td>Materials for iterating on an ergonomic, wearable enclosure for the neck/jaw placement.</td>
+    </tr>
+    <tr>
+        <td>Logistics</td>
+        <td>Shipping & Contingency</td>
+        <td>$85</td>
+        <td>Buffer for international shipping costs, import duties, and minor component iterations.</td>
+    </tr>
+    <tr>
+        <td colspan="2"><b>Total Requested</b></td>
+        <td><b>$350</b></td>
+        <td></td>
     </tr>
 </table>
-{{ body_text("Final line-item amounts will be attached in the formal budget sheet according to the grant template. The percentage structure above reflects execution priority and procurement risk.") }}
 <hr>
 
 {{ header("Ethics, Privacy, and Safety") }}
