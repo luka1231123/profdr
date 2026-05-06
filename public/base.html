@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luka Rekhviashvili</title>
+
+    
+    <meta name="description" content="Personal site of Luka Rekhviashvili — student, researcher, and builder.">
+    <meta name="keywords" content="Luka Rekhviashvili">
+    <meta name="author" content="Luka Rekhviashvili">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luka-rekhviashvili.com/index.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Luka Rekhviashvili">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://luka-rekhviashvili.com/">
+    <meta property="og:image" content="https://luka-rekhviashvili.com/portrait.jpg">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://luka-rekhviashvili.com/portrait.jpg">
+    
+
+    <style>
+        /* 1. Global Styles */
+        body {
+            /* Flexbox setup for the sticky footer */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body is at least as tall as the screen */
+            
+            margin-top: 0;
+            margin-left: 5%;
+            margin-right: 50%;
+            font-family: "Times New Roman", Times, serif; /* Classic Prof Dr font */
+        }
+
+        /* 2. Hide Mobile elements by default (Desktop view) */
+        .mobile-only { 
+            display: none; 
+        }
+
+        /* 3. The "Switch" (Media Query) */
+        @media only screen and (max-width: 600px) {
+            .desktop-only { display: none !important; }
+            .mobile-only { 
+                display: block !important;
+                margin-left: 2%;
+                margin-right: 2%; 
+            }
+            body { 
+                font-size: 18px; 
+                margin-left: 2%; 
+                margin-right: 2%;
+            }
+        }
+
+        /* 4. Ensure header alignment */
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px; /* Replaces the top <br> */
+        }
+        .header-table td {
+            vertical-align: top;
+        }
+
+        .portrait-cell {
+            width: 144px; 
+            min-width: 144px; 
+            max-width: 144px;
+            padding-right: 10px; 
+        }
+
+        hr {
+            width: 100%;
+            display: block;
+        }
+
+        /* 5. Footer styling */
+        footer {
+            margin-top: auto; /* This magically pushes the footer to the bottom */
+            padding-bottom: 20px; /* Gives some breathing room at the bottom of the page */
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <table class="header-table" border="0" cellpadding="0" cellspacing="15">
+            <tr>
+                
+                <td align="left" valign="top">
+                    <b><font size="5">Luka Rekhviashvili</font></b><br>
+                    <i>Abiturient/Senior Student, pulchritudinous</i>
+                    <br>
+                    
+                    
+                </td>
+            </tr>
+        </table>
+    </header>
+    <br>    
+    <hr>
+    
+    
+    
+    <footer>
+        <hr>
+        
+        <p><a href="index.html">[ &lt;&lt; return to main index ]</a></p>
+        
+        <p style="margin: 0;">last modified: May 06, 2026</p>
+    </footer>
+</body>
+</html>
