@@ -3,6 +3,15 @@
 {% block title %}Context & Mission{% endblock %}
 {% block head %}Context & Mission{% endblock %}
 
+{% block canonical %}context.html{% endblock %}
+{% block og_title %}Amtavla — Context & Mission{% endblock %}
+{% block og_url %}context.html{% endblock %}
+{% block og_description %}The context and mission behind Amtavla's Sub Vocal Recognition technology — bridging human-computer interaction through biosignal decoding.{% endblock %}
+{% block twitter_title %}{{ self.og_title() }}{% endblock %}
+{% block twitter_description %}{{ self.og_description() }}{% endblock %}
+{% block meta_description %}The context and mission behind Amtavla's Sub Vocal Recognition technology — bridging human-computer interaction through biosignal decoding.{% endblock %}
+{% block keywords %}human-computer interaction, BCI, silent speech interface, cognitive computing, brain-computer interface, SVR{% endblock %}
+
 
 {% block content %}
 

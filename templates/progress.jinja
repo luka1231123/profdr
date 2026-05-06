@@ -4,6 +4,15 @@
 {% block head %}Project Development Roadmap{% endblock %}
 {% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
 
+{% block canonical %}progress.html{% endblock %}
+{% block og_title %}Amtavla — Project Development Roadmap{% endblock %}
+{% block og_url %}progress.html{% endblock %}
+{% block og_description %}Amtavla's development roadmap — from Phase 1 foundation through Phase 3 deployment of a miniaturized wearable silent speech interface.{% endblock %}
+{% block twitter_title %}{{ self.og_title() }}{% endblock %}
+{% block twitter_description %}{{ self.og_description() }}{% endblock %}
+{% block meta_description %}Amtavla's development roadmap — from Phase 1 foundation through Phase 3 deployment of a miniaturized wearable SSI.{% endblock %}
+{% block keywords %}project roadmap, EMG development phases, wearable prototype timeline, ADS1299, Phase 1, Phase 2, Phase 3{% endblock %}
+
 {% block content %}
 {{header("Phase 1: Foundation and Theoretical Framework (COMPLETE)")}}
 {{body_text("The initial phase focuses on establishing the scientific and technical groundwork for the electromyography (EMG) system, validating core concepts before moving into complex hardware fabrication. Development begins with a comprehensive literature review of existing research and past methodologies to establish a rigorous technical baseline. Concurrently, we will construct a basic, single-channel electrode setup to validate initial signal acquisition capabilities and test baseline sensor viability. Once the preliminary hardware is verified, the focus will shift to mapping out the architecture for the AI system, defining the core logic and operational flow required for signal interpretation. Finally, this phase will conclude with the engineering of a data encoding pipeline, which consists of a software encoder designed to reliably translate raw hardware signals into formatted data streams for software analysis and baseline testing.")}}

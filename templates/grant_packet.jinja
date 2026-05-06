@@ -4,6 +4,15 @@
 {% block head %}Grant Packet{% endblock %}
 {% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
 
+{% block canonical %}grant_packet.html{% endblock %}
+{% block og_title %}Amtavla — Grant Packet (Phase 2){% endblock %}
+{% block og_url %}grant_packet.html{% endblock %}
+{% block og_description %}Amtavla Phase 2 funding request for 8-channel wearable prototype fabrication, data collection, and model benchmarking.{% endblock %}
+{% block twitter_title %}{{ self.og_title() }}{% endblock %}
+{% block twitter_description %}{{ self.og_description() }}{% endblock %}
+{% block meta_description %}Amtavla Phase 2 funding request for 8-channel wearable prototype fabrication, data collection, and model benchmarking.{% endblock %}
+{% block keywords %}grant request, research funding, EMG prototype, Phase 2 development, ADS1299, biosignal research{% endblock %}
+
 {% block content %}
 {{ header("Funding Request Focus: Phase 2") }}
 {{ body_text("This grant request is focused on Phase 2, where conceptual and single-channel groundwork is transformed into a multi-channel wearable system ready for structured user validation. Funding enables custom electronics fabrication, signal-grade materials procurement, participant testing logistics, and concentrated model benchmarking. The immediate objective is to produce a reliable eight-channel prototype and a rigorously documented dataset that supports reproducible decoding performance analysis.") }}
@@ -19,12 +28,12 @@
     <tr>
         <td>Electronics and fabrication</td>
         <td>ADS1299 integration, custom PCB fabrication, passive components, prototyping revisions</td>
-        <td>40%</td>
+        <td>35%</td>
     </tr>
     <tr>
         <td>Wearable materials</td>
         <td>Graphene-coated textile electrodes, structural neckband materials, housing iterations</td>
-        <td>20%</td>
+        <td>30%</td>
     </tr>
     <tr>
         <td>Data collection operations</td>
@@ -35,11 +44,6 @@
         <td>Compute and model development</td>
         <td>Training infrastructure, experiment tracking, baseline model evaluation pipelines</td>
         <td>15%</td>
-    </tr>
-    <tr>
-        <td>Contingency and reliability buffer</td>
-        <td>Component lead-time volatility, failed board revisions, replacement equipment</td>
-        <td>5%</td>
     </tr>
 </table>
 {{ body_text("Final line-item amounts will be attached in the formal budget sheet according to the grant template. The percentage structure above reflects execution priority and procurement risk.") }}
@@ -59,6 +63,7 @@ Data governance emphasizes minimal retention and purpose limitation. Only data r
 4) Quantitative report including baseline word error rate, latency, and session stability metrics
 5) Demonstration package with images, architecture diagram, and short end-to-end test video
 These outputs are structured to support independent review, replication, and phase-gate decisions for post-grant deployment work.") }}
+<p>For reference, our Phase 1 demo, AI system, and software architecture are documented on the following pages: <a href="hardware.html">Methodology (Hardware)</a> and <a href="software.html">Methodology (Software)</a>.</p>
 <hr>
 
 {{ header("Expected Phase 2 Outcomes") }}

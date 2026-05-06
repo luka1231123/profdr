@@ -1,11 +1,21 @@
 {% extends "base.jinja" %}
 
 {% block title %}Amtavla: Sub Vocal Recognition{% endblock %}
+
+{% block canonical %}svr.html{% endblock %}
+{% block og_title %}Amtavla — Sub Vocal Recognition Project{% endblock %}
+{% block og_url %}svr.html{% endblock %}
+{% block og_description %}Amtavla develops a wearable Sub Vocal Recognition interface that decodes silent speech from EMG signals and converts biological intention into direct digital action.{% endblock %}
+{% block twitter_title %}{{ self.og_title() }}{% endblock %}
+{% block twitter_description %}{{ self.og_description() }}{% endblock %}
+{% block meta_description %}Amtavla — Sub Vocal Recognition project decoding silent speech from EMG signals. Wearable 8-channel prototype using ADS1299.{% endblock %}
+{% block keywords %}sub vocal recognition, SVR, EMG, silent speech, Amtavla, wearable technology, ADS1299, biosignal decoding{% endblock %}
+
 {% block head %}Amtavla: Sub Vocal Recognition Project{% endblock %}
 {% block subhead %}Luka Rekhviashvili, Giorgi Rurua{% endblock %}
 
 {% block content %}
-<h3>Grant Brief</h3>
+<h3>Executive Brief</h3>
 <p style="margin-top: 0%;">
     Amtavla develops a wearable Sub Vocal Recognition interface that decodes silent speech from EMG signals and converts biological intention into direct digital action. The central grant objective is to complete Phase 2: build an 8-channel wearable prototype around the ADS1299 capture engine, collect a high-quality multi-user dataset, and validate decoding performance under real-world conditions.
 </p>
@@ -27,6 +37,6 @@
 {% endblock %}
 
 {% block footer_links %}
-<p style="margin: 0;"><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+<p style="margin: 0;"><a href="index.html">[ &lt;&lt; return to main index ]</a></p>
 <p style="margin-top: 6px;"><a href="svr.html">[ &lt;&lt; return to svr index ]</a></p>
 {% endblock %}

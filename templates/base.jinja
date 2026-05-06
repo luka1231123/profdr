@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Luka Rekhviashvili{% endblock %}</title>
+
+    {% block meta %}
+    <meta name="description" content="{% block meta_description %}Personal site of Luka Rekhviashvili — student, researcher, and builder.{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}Luka Rekhviashvili{% endblock %}">
+    <meta name="author" content="Luka Rekhviashvili">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luka-rekhviashvili.com/{% block canonical %}index.html{% endblock %}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Luka Rekhviashvili">
+    <meta property="og:title" content="{% block og_title %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% endblock %}">
+    <meta property="og:url" content="https://luka-rekhviashvili.com/{% block og_url %}{% endblock %}">
+    {% block og_image %}<meta property="og:image" content="https://luka-rekhviashvili.com/portrait.jpg">{% endblock %}
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% block twitter_title %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}">
+    <meta name="twitter:image" content="https://luka-rekhviashvili.com/portrait.jpg">
+    {% endblock %}
 
     <style>
         /* 1. Global Styles */
@@ -92,7 +112,7 @@
     <footer>
         <hr>
         {% block footer_links %}
-        <p><a href="main.html">[ &lt;&lt; return to main index ]</a></p>
+        <p><a href="index.html">[ &lt;&lt; return to main index ]</a></p>
         {% endblock %}
         <p style="margin: 0;">last modified: {{ last_modified }}</p>
     </footer>

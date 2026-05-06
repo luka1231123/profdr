@@ -3,6 +3,15 @@
 {% block title %}Methodology (Hardware){% endblock %}
 {% block head %}Methodology (Hardware){% endblock %}
 
+{% block canonical %}hardware.html{% endblock %}
+{% block og_title %}Amtavla — Hardware Architecture{% endblock %}
+{% block og_url %}hardware.html{% endblock %}
+{% block og_description %}Amtavla's hardware architecture — a modified neckband with ADS1299 capture engine and graphene-coated textile electrodes for EMG acquisition.{% endblock %}
+{% block twitter_title %}{{ self.og_title() }}{% endblock %}
+{% block twitter_description %}{{ self.og_description() }}{% endblock %}
+{% block meta_description %}Amtavla's hardware architecture — a modified neckband with ADS1299 capture engine and graphene-coated textile electrodes for EMG acquisition.{% endblock %}
+{% block keywords %}EMG hardware, ADS1299, textile electrodes, wearable biosensors, neckband design, graphene electrodes, PCB fabrication{% endblock %}
+
 {% block content %}
 <style>
     .part-b-shell {
@@ -13,7 +22,7 @@
         position: absolute;
         left: calc(100% + 40px);
         top: 0;
-        width: min(46vw, 50px);
+        width: min(46vw, 500px);
         min-width: 480px;
         z-index: 2;
     }
@@ -63,5 +72,10 @@ The electrode-to-skin interface is where signal quality and comfort most directl
     <p>Proposed electrode placement: 1-masseter, 2-digastric, 3-mylohyoid, 4-sternocleidomastoid.</p>
 </aside>
 </section>
+
+<hr>
+{{ header("Current Status")}}
+{{ body_text("Having successfully validated our core capture mechanics via an initial proof-of-concept, we are now finalizing the custom PCB schematics and signal-processing architecture. The project is fully primed for Phase 2 prototyping and rigorous empirical testing immediately upon funding.")}}
+<p>Early demonstration video: <a href="https://www.loom.com/share/bc05265792b94813ac4890f22db602ee" target="_blank">Loom - Hardware Demo</a></p>
 
 {% endblock %}

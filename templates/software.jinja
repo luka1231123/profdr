@@ -3,6 +3,15 @@
 {% block title %}Software{% endblock %}
 {% block head %}Software{% endblock %}
 
+{% block canonical %}software.html{% endblock %}
+{% block og_title %}Amtavla — Software Architecture{% endblock %}
+{% block og_url %}software.html{% endblock %}
+{% block og_description %}Amtavla's software architecture — EMG-to-text pipeline with MONA LISA framework, CTC decoding, LLM correction, and a cognitive assistant.{% endblock %}
+{% block twitter_title %}{{ self.og_title() }}{% endblock %}
+{% block twitter_description %}{{ self.og_description() }}{% endblock %}
+{% block meta_description %}Amtavla's software architecture — EMG-to-text pipeline with MONA LISA framework, CTC decoding, LLM correction, and a cognitive assistant.{% endblock %}
+{% block keywords %}EMG-to-text, speech decoding, cognitive assistant, MONA LISA, LLM integration, CTC decoding, signal processing{% endblock %}
+
 {% block content %}
 
 {{ header("Software Architecture")}}
@@ -29,6 +38,7 @@ Insight: Synthesizes higher-level conclusions across multiple sessions over time
 Memory is dynamic; it strengthens upon recall and gradually decays when ignored. Crucially, the system handles this memory consolidation, decay, and insight generation entirely in the background, ensuring the foreground conversation remains seamless and uninterrupted.
 Broadly, the system functions as a continuous, reliable operational loop. It takes raw text input, routes it through local models to parse intent, executes necessary actions-like memory retrieval or logical reasoning-and generates a coherent output. Under the hood, it relies on deterministic routing, strict JSON-structured planning, and local SQLite databases to ensure this cycle of input, computation, and response remains fast and stable.
 ")}}
+<p>The complete source code and technical documentation are available at <a href="https://github.com/luka1231123/amtavla" target="_blank">GitHub - Amtavla</a>.</p>
     </div>
 
     <aside class="part-b-graph-panel" aria-label="Software architecture mindmap">
