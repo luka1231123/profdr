@@ -13,34 +13,69 @@
 
 {% block portrait %}
 <td align="left" valign="top" class="desktop-only portrait-cell">
-    <img src="portrait.jpg" alt="Luka Rekhviashvili" width="140" border="2">
+    <img class="luka-only" src="portrait.jpg" alt="Luka Rekhviashvili" width="140" border="2">
+    <img class="partner-only" src="port2.jpg" alt="Giorgi Rurua" width="140" border="2">
 </td>
 {% endblock %}
 
-{% block head %}Luka Rekhviashvili{% endblock %}
-{% block subhead %}Abiturient/Senior Student, pulchritudinous{% endblock %}
+{% block head %}
+<span class="luka-only">Luka Rekhviashvili</span>
+<span class="partner-only">Giorgi Rurua</span>
+{% endblock %}
+{% block subhead %}
+<span class="luka-only">Abiturient/Senior Student, pulchritudinous</span>
+<span class="partner-only">Abiturient / Incoming Engineering Student</span>
+{% endblock %}
 
 {% block extra %}
+<div class="luka-only">
 <p>Guivy Zaldastanishvili American Academy in Tbilisi <br> Leo Kvachadze 7</p>
 <p>phone: +995 577 18 11 99 <br> email: luka04rekhviashvili@gmail.com</p>
+</div>
+<div class="partner-only">
+<p>phone: +995 555 311 132 <br> email: Grurua2026@aat.ge</p>
+</div>
+{% endblock %}
+
+{% block right %}
+<td align="right" valign="top" style="min-width: 80px;">
+    <button class="toggle-btn">[ Toggle ]</button>
+</td>
 {% endblock %}
 
 {% block content %}
+<div class="luka-only">
 <h3>About Me</h3>
 <p style="margin-top: 0%;">
-I am Luka Rekhviashvili, a senior at the Guivy Zaldastanishvili American Academy and an incoming student at Grinnell College. Having programmed since I was nine, I've naturally gravitated toward studying complex systems and building new technologies. Academically, I like to blend computer engineering with the philosophy of technology. I often look to thinkers like Descartes and Kant, as well as concepts like E.F. Schumacher’s "Intermediate Technology," to better understand how modern systems impact human autonomy.
+I am Luka Rekhviashvili, a senior at the Guivy Zaldastanishvili American Academy and an incoming student at Grinnell College. Having programmed since I was nine, I've naturally gravitated toward studying complex systems and building new technologies. Academically, I like to blend computer engineering with the philosophy of technology. I often look to thinkers like Descartes and Kant, as well as concepts like E.F. Schumacher's "Intermediate Technology," to better understand how modern systems impact human autonomy.
 </p>
 <p style="margin-top: 0%;">
-My core research sits at the intersection of neuroscience, machine learning, and human-computer interaction. I recently co-founded Amtavla, a project focused on decoding silent speech from EMG signals using AI and medical-grade hardware. Beyond this sub-vocal recognition research, I’ve co-authored published work on human-steered evolutionary computation and am currently building a digital library to scrape and archive 18th-century regional transcripts. 
+My core research sits at the intersection of neuroscience, machine learning, and human-computer interaction. I recently co-founded Amtavla, a project focused on decoding silent speech from EMG signals using AI and medical-grade hardware. Beyond this sub-vocal recognition research, I've co-authored published work on human-steered evolutionary computation and am currently building a digital library to scrape and archive 18th-century regional transcripts. 
 </p> <p style="margin-top: 0%;">
 
 When I am not focused on research, I try to maintain a strong balance between physical and artistic disciplines. I compete locally as a Judo blue belt (2nd Kyu), practice classical piano—with a focus on Bach and Chopin—and spend my downtime exploring viticulture, history, and linguistics.
 </p>
+</div>
+
+<div class="partner-only">
+<h3>About Me</h3>
+<p style="margin-top: 0%;">
+I am Giorgi Rurua, a graduate of the Guivy Zaldastanishvili American Academy and an incoming Engineering Technology student at KU Leuven, where I plan to focus on aerospace, nuclear physics, and fusion energy.
+</p>
+<p style="margin-top: 0%;">
+My engineering work started at AzRy, one of the few Georgian engineering firms operating at a citywide scale. I joined as the youngest person on the team, researched my way up, and ended up designing PCB prototypes and 3D renders that fed directly into company projects - adapting metro terminals to precise specifications and stress-testing hardware through hundreds of cycles. At school, I founded the first Science Olympiad Club and served as its lead, preparing students by having them work through proofs rather than memorizing formulas.
+</p>
+<p style="margin-top: 0%;">
+Outside of engineering, I train in calisthenics, and I also compete in Model UN, where I've passed resolutions at several conferences and earned an Honorable Mention in the Security Council at NIMUN 2025.
+</p>
+</div>
+
 <hr>
 <p>navigation</p>
 <ul>
-    <li><a href="https://www.linkedin.com/in/luka-rekhviashvili-44630433b">LinkedIn Page</a> </li>
-    <li><a href="https://github.com/luka1231123">Github Page</a> </li>
+    <li><a href="https://www.linkedin.com/in/luka-rekhviashvili-44630433b">Luka's LinkedIn</a></li>
+    <li><a href="https://github.com/luka1231123">Luka's Github</a></li>
+    <li><a href="">Giorgi's LinkedIn</a>https://www.linkedin.com/in/giorgi-rurua-53a948350/</li>
     <li><a href="svr.html">sub vocal recognition (SVR) research project</a></li>
     <li><a href="Resume.pdf" target="_blank">download CV (PDF)</a></li>
     <li><a href="https://www.curieuxreview.com/_files/ugd/60ed3c_0407a6ed552e49e89c9c4a1a5f959c02.pdf">published HS article I</a><br> 
@@ -50,4 +85,17 @@ When I am not focused on research, I try to maintain a strong balance between ph
     </li>
     <li><a href="">published article II</a><br><i>&emsp;coming soon, (SVR)</i></li>
 </ul>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.toggle-btn');
+    if (btn) {
+        btn.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('partner-view');
+            document.title = document.body.classList.contains('partner-view') ? 'Giorgi Rurua' : 'personal site';
+        });
+    }
+});
+</script>
 {% endblock %}

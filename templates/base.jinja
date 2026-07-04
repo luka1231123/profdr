@@ -86,6 +86,42 @@
             margin-top: auto; /* This magically pushes the footer to the bottom */
             padding-bottom: 20px; /* Gives some breathing room at the bottom of the page */
         }
+
+        /* 6. Partner toggle */
+        body.dark-mode {
+            background: black;
+            color: white;
+        }
+        body.dark-mode a {
+            color: white;
+        }
+        body.dark-mode a:visited {
+            color: #ccc;
+        }
+        body.dark-mode hr {
+            border-color: white;
+        }
+        .partner-only {
+            display: none;
+        }
+        body.partner-view .luka-only {
+            display: none;
+        }
+        body.partner-view .partner-only {
+            display: block;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 0.7em;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 6px;
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
     </style>
 
 </head>
@@ -101,6 +137,7 @@
                     {%block extra%}
                     {% endblock %}
                 </td>
+                {% block right %}{% endblock %}
             </tr>
         </table>
     </header>
